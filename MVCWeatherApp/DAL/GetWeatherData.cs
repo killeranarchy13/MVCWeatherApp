@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace MVCWeatherApp.DAL
 {
@@ -18,5 +19,6 @@ namespace MVCWeatherApp.DAL
             }
             return WeatherData;
         }
+        JavaScriptSerializer sz = new JavaScriptSerializer();
     }
 }
