@@ -18,8 +18,8 @@ namespace MVCWeatherApp.DAL
                 using (var client = new HttpClient())
                 {
                     WeatherData = await client.GetStringAsync("http://api.openweathermap.org/data/2.5/weather?q={"+ CityName + "}").ConfigureAwait(false);
+                    return WeatherData;
                 }
-                return WeatherData;
             }
             catch (Exception ex)
             {

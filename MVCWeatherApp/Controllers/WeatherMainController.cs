@@ -1,4 +1,6 @@
-﻿using MVCWeatherApp.DAL;
+﻿using MVCWeatherApp.BL;
+using MVCWeatherApp.DAL;
+using MVCWeatherApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,11 @@ namespace MVCWeatherApp.Controllers
         // GET: WeatherMain
         public ActionResult WeatherMainView()
         {
+            PopulateModelsWithData obj = new PopulateModelsWithData();
             GetWeatherDataContext gt = new GetWeatherDataContext();
-            string x=gt.GetWeatherDataFromWebAPI("Bangalore").ToString();
+            CityWeather cwthr = new CityWeather();
+            obj.PopulateTheCityWaetherObject(cwthr);
+
             return View();
         }
     }
