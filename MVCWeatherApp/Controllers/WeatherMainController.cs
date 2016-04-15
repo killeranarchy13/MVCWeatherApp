@@ -15,10 +15,10 @@ namespace MVCWeatherApp.Controllers
         public ActionResult WeatherMainView()
         {
             PopulateModelsWithData obj = new PopulateModelsWithData();
-            GetWeatherDataContext gt = new GetWeatherDataContext();
-            CityWeather cwthr = new CityWeather();
-            obj.PopulateTheCityWaetherObject(cwthr);
-
+            //var x = obj.PopulateTheCityWeatherObject();
+            System.Diagnostics.Debug.WriteLine("The return value = " + obj.PopulateTheCityWeatherObject().ToString());
+            System.Diagnostics.Debug.WriteLine("The return value = View");
+            //return View(obj.PopulateTheCityWeatherObject().ToString());
             return View();
         }
     }
