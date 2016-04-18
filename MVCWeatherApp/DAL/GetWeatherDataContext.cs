@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
@@ -10,14 +11,14 @@ namespace MVCWeatherApp.DAL
 {
     public class GetWeatherDataContext
     {
-        public async Task<string> GetWeatherDataFromWebAPI(string CityName)
+        public string GetWeatherDataFromWebAPI(string CityName)
         {
             try
             {
                 string WeatherData;
-                using (var client = new HttpClient())
+                using (var client = new WebClient())
                 {
-                    WeatherData = await client.GetStringAsync("http://api.openweathermap.org/data/2.5/weather?q={"+ CityName + "}").ConfigureAwait(false);
+                    WeatherData = client.DownloadString("http://api.openweathermap.org/data/2.5/weather?q={"+ CityName + "}");
                     return WeatherData;
                 }
             }

@@ -9,16 +9,14 @@ using System.Web.Mvc;
 
 namespace MVCWeatherApp.Controllers
 {
-    public class WeatherMainController : Controller
+    public class WeatherMainController : AsyncController
     {
         // GET: WeatherMain
         public ActionResult WeatherMainView()
         {
             PopulateModelsWithData obj = new PopulateModelsWithData();
-            //var x = obj.PopulateTheCityWeatherObject();
-            System.Diagnostics.Debug.WriteLine("The return value = " + obj.PopulateTheCityWeatherObject().ToString());
-            System.Diagnostics.Debug.WriteLine("The return value = View");
-            //return View(obj.PopulateTheCityWeatherObject().ToString());
+            CityWeather objCity = new CityWeather();
+            obj.PopulateTheCityWeatherObject(objCity);
             return View();
         }
     }
