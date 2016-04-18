@@ -12,7 +12,7 @@ namespace MVCWeatherApp.BL
 {
     public class PopulateModelsWithData
     {
-        public string PopulateTheCityWeatherObject(CityWeather objCity)
+        public void PopulateTheCityWeatherObject(ref CityWeather objCity)
         {
             try
             {
@@ -20,12 +20,10 @@ namespace MVCWeatherApp.BL
                 GetWeatherDataContext gt = new GetWeatherDataContext();
                 WeatherInfo = gt.GetWeatherDataFromWebAPI("Bangalore");
 
-                objCity = JsonConvert.DeserializeObject<CityWeather>(WeatherInfo);
-                return WeatherInfo;
+                objCity = JsonConvert.DeserializeObject<Wrapper>(WeatherInfo).CityWeather;
             }
             catch (Exception ex)
             {
-                return "";
             }
 
         }

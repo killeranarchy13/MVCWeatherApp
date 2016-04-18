@@ -8,6 +8,26 @@
 
 <div>
     <hr />
-    <dl class="dl-horizontal">
-    </dl>
+    <dl class="dl-horizontal"></dl>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.temp)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.humidity)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.temp)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.humidity)
+            </td>
+        </tr>
+    </table>
+
 </div>

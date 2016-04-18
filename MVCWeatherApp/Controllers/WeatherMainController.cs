@@ -15,9 +15,9 @@ namespace MVCWeatherApp.Controllers
         public ActionResult WeatherMainView()
         {
             PopulateModelsWithData obj = new PopulateModelsWithData();
-            CityWeather objCity = new CityWeather();
-            obj.PopulateTheCityWeatherObject(objCity);
-            return View();
+            CityWeather model = new CityWeather();
+            obj.PopulateTheCityWeatherObject(ref model);
+            return View(model);
         }
     }
 }
