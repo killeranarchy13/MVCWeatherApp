@@ -9,19 +9,33 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div id="content">
+        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+            <li class="active"><a href="#red" data-toggle="tab">Red</a></li>
+            <li><a href="#orange" data-toggle="tab">Orange</a></li>
+            <li><a href="#yellow" data-toggle="tab">Yellow</a></li>
+            <li><a href="#green" data-toggle="tab">Green</a></li>
+            <li><a href="#blue" data-toggle="tab">Blue</a></li>
+        </ul>
+        <div id="my-tab-content" class="tab-content">
+            <div class="tab-pane active" id="red">
+                <<div class="tab-pane active" id="home">@Html.Action("WeatherMainView", "WeatherMainController")</div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+            <div class="tab-pane" id="orange">
+                <h1>Orange</h1>
+                <p>orange orange orange orange orange</p>
+            </div>
+            <div class="tab-pane" id="yellow">
+                <h1>Yellow</h1>
+                <p>yellow yellow yellow yellow yellow</p>
+            </div>
+            <div class="tab-pane" id="green">
+                <h1>Green</h1>
+                <p>green green green green green</p>
+            </div>
+            <div class="tab-pane" id="blue">
+                <h1>Blue</h1>
+                <p>blue blue blue blue blue</p>
             </div>
         </div>
     </div>
@@ -30,7 +44,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My Weather Application</p>
         </footer>
     </div>
 

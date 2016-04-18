@@ -21,12 +21,11 @@ namespace MVCWeatherApp.BL
                 WeatherInfo = gt.GetWeatherDataFromWebAPI("Bangalore");
 
                 objCity = JsonConvert.DeserializeObject<Wrapper>(WeatherInfo).CityWeather;
+                objCity.temp = (Convert.ToDouble(objCity.temp) - 273.15).ToString();
             }
             catch (Exception ex)
             {
             }
-
         }
-        
     }
 }
