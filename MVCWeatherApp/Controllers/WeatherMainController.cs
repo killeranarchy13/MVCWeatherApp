@@ -17,7 +17,7 @@ namespace MVCWeatherApp.Controllers
             PopulateModelsWithData obj = new PopulateModelsWithData();
             CityWeather model = new CityWeather();
             obj.PopulateTheCityWeatherObject(ref model);
-            return View(model);
+            return PartialView(model);
         }
     }
 }

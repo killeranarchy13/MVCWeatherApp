@@ -11,15 +11,15 @@
 <body>
     <div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a href="#red" data-toggle="tab">Red</a></li>
-            <li><a href="#orange" data-toggle="tab">Orange</a></li>
+            <li><a href="#red" data-toggle="tab">Red</a></li>
+            <li class="active"><a href="#orange" data-toggle="tab">Orange</a></li>
             <li><a href="#yellow" data-toggle="tab">Yellow</a></li>
             <li><a href="#green" data-toggle="tab">Green</a></li>
             <li><a href="#blue" data-toggle="tab">Blue</a></li>
         </ul>
         <div id="my-tab-content" class="tab-content">
             <div class="tab-pane active" id="red">
-                <<div class="tab-pane active" id="home">@Html.Action("WeatherMainView", "WeatherMainController")</div>
+                <div class="tab-pane active" id="home">@Html.ActionLink("Weather Main View Link", "WeatherMainView")</div>
             </div>
             <div class="tab-pane" id="orange">
                 <h1>Orange</h1>
